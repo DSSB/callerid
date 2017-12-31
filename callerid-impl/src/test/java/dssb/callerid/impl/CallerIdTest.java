@@ -1,30 +1,23 @@
 package dssb.callerid.impl;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
-import lombok.val;
+import dssb.callerid.ITraceCallerSpec;
 
 @SuppressWarnings("javadoc")
 public class CallerIdTest {
     
+    private ITraceCallerSpec spec   = new ITraceCallerSpec();
+    private CallerId         tracer = new CallerId();
+    
     @Test
     public void testBasicCaller() {
-        val stackTrace = new Calling1().first();
-        assertEquals(Calling1.class.getCanonicalName(), stackTrace.getClassName());
-        assertEquals("first",                           stackTrace.getMethodName());
-        assertEquals("Calling1.java",                   stackTrace.getFileName());
-        assertEquals(7,                                 stackTrace.getLineNumber());
+        spec.testBasicCaller(tracer);
     }
     
     @Test
     public void testBasicCallerWithOffset() {
-        val stackTrace = new Calling2().zero();
-        assertEquals(Calling2.class.getCanonicalName(), stackTrace.getClassName());
-        assertEquals("zero",                            stackTrace.getMethodName());
-        assertEquals("Calling2.java",                   stackTrace.getFileName());
-        assertEquals(7,                                 stackTrace.getLineNumber());
+        spec.testBasicCallerWithOffset(tracer);
     }
     
 }
