@@ -4,6 +4,8 @@ dependencies {
     compile project(':callerid-api')
     
     compile 'org.projectlombok:lombok:1.16.16'
+
+    //== Test ==
     
     testCompile project(':callerid-spec')
     

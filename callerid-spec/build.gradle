@@ -1,8 +1,8 @@
 version='1.0.0'
 
 dependencies {
-    compile     project(':callerid-api')
+    compile project(':callerid-api')
     
-    compile     'org.projectlombok:lombok:1.16.16'
-    testCompile 'junit:junit:4.12'
+    compile 'org.projectlombok:lombok:1.16.16'
+    compile 'junit:junit:4.12'
 }
