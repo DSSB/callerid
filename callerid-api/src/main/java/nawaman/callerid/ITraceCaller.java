@@ -15,6 +15,8 @@
 //  ========================================================================
 package nawaman.callerid;
 
+import lombok.val;
+
 /**
  * Classes implementing this interface can trace a caller.
  * 
@@ -39,6 +41,13 @@ public interface ITraceCaller {
      *          negative number will be seen as 0.
      * @return the caller.
      */
-    public StackTraceElement caller(int offset);
+    public default StackTraceElement caller(int offset) {
+        offset = Math.max(0, offset);
+        
+        val stackTrace = Thread.currentThread().getStackTrace();
+        val length     = stackTrace.length;
+        val index      = Math.min(length - 1, 3) + offset;
+        return stackTrace[index];
+    }
     
 }
