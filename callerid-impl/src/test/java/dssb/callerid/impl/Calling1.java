@@ -1,4 +1,6 @@
-package directsoft.callerid.impl;
+package dssb.callerid.impl;
+
+import dssb.callerid.impl.CallerId;
 
 @SuppressWarnings("javadoc")
 public class Calling1 {

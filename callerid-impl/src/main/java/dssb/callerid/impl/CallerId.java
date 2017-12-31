@@ -1,7 +1,7 @@
-package directsoft.callerid.impl;
+package dssb.callerid.impl;
 
+import dssb.callerid.ITraceCaller;
 import lombok.val;
-import directsoft.callerid.ITraceCaller;
 
 /**
  * Implementation to get the caller.

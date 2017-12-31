@@ -1,4 +1,4 @@
-package directsoft.callerid;
+package dssb.callerid;
 
 /**
  * Classes implementing this interface can trace a caller.

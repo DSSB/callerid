@@ -1,4 +1,4 @@
-package directsoft.callerid.impl;
+package dssb.callerid.impl;
 
 import static org.junit.Assert.assertEquals;
 
