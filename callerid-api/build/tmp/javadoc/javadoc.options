@@ -1,0 +1,8 @@
+-author 
+-d '/Users/manusitn/NawaDev/caller-id/callerid-api/build/docs/javadoc'
+-doctitle 'callerid-api 1.0.0 API'
+-link 'https://docs.oracle.com/javase/8/docs/api/'
+-public 
+-quiet 
+-windowtitle 'callerid-api 1.0.0 API'
+'/Users/manusitn/NawaDev/caller-id/callerid-api/src/main/java/directsoft/callerid/ITraceCaller.java'

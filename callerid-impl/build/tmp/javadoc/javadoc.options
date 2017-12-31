@@ -1,0 +1,9 @@
+-author 
+-classpath '/Users/manusitn/NawaDev/caller-id/callerid-api/build/libs/callerid-api-1.0.0.jar:/Users/manusitn/.m2/repository/directcommon/common/1.4.6/common-1.4.6.jar:/Users/manusitn/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.16.16/245b50f714bf89ed7659266ace12f9e509d13551/lombok-1.16.16.jar'
+-d '/Users/manusitn/NawaDev/caller-id/callerid-impl/build/docs/javadoc'
+-doctitle 'callerid-impl 1.0.0 API'
+-link 'https://docs.oracle.com/javase/8/docs/api/'
+-public 
+-quiet 
+-windowtitle 'callerid-impl 1.0.0 API'
+'/Users/manusitn/NawaDev/caller-id/callerid-impl/src/main/java/directsoft/callerid/impl/CallerId.java'
