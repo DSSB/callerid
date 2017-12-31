@@ -17,8 +17,8 @@ package nawaman.callerid.impl;
 
 import org.junit.Test;
 
-import nawaman.callerid.ITraceCallerSpec;
 import nawaman.callerid.impl.CallerId;
+import nawaman.callerid.spec.ITraceCallerSpec;
 
 @SuppressWarnings("javadoc")
 public class CallerIdTest {

@@ -1,5 +1,6 @@
 
 include ":callerid-api"
 include ":callerid-impl"
+include ":callerid-spec"
 
 rootProject.name = theName

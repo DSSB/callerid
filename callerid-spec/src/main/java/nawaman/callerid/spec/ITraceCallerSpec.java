@@ -13,7 +13,7 @@
 //
 //  You may elect to redistribute this code under either of these licenses.
 //  ========================================================================
-package nawaman.callerid;
+package nawaman.callerid.spec;
 
 import static org.junit.Assert.assertEquals;
 

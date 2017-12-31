@@ -1,0 +1,1 @@
+This project contains specifications for any one who wants to implements the API.
