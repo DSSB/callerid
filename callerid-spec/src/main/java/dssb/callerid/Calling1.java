@@ -1,5 +1,5 @@
 //  ========================================================================
-//  Copyright (c) 2017 Nawapunth Manusitthipol.
+//  Copyright (c) 2017 Direct Solution Software Builders (DSSB).
 //  ------------------------------------------------------------------------
 //  All rights reserved. This program and the accompanying materials
 //  are made available under the terms of the Eclipse Public License v1.0
@@ -13,18 +13,25 @@
 //
 //  You may elect to redistribute this code under either of these licenses.
 //  ========================================================================
-package nawaman.callerid.impl;
+package dssb.callerid;
 
-import nawaman.callerid.ITraceCaller;
+import dssb.callerid.ITraceCaller;
 
-/**
- * Implementation to get the caller.
- * 
- * @author NawaMan
- */
-public class CallerId implements ITraceCaller {
+@SuppressWarnings("javadoc")
+public class Calling1 {
     
-    /** The default instance of the caller id. */
-    public static final CallerId instance = new CallerId();
+    private final ITraceCaller tracer;
+    
+    public Calling1(ITraceCaller tracer) {
+        this.tracer = tracer;
+    }
+    
+    public StackTraceElement caller() {
+        return checker();
+    }
+    
+    public StackTraceElement checker() {
+        return tracer.caller();
+    }
     
 }

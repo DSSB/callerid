@@ -1,5 +1,5 @@
 //  ========================================================================
-//  Copyright (c) 2017 Nawapunth Manusitthipol.
+//  Copyright (c) 2017 Direct Solution Software Builders (DSSB).
 //  ------------------------------------------------------------------------
 //  All rights reserved. This program and the accompanying materials
 //  are made available under the terms of the Eclipse Public License v1.0
@@ -13,27 +13,29 @@
 //
 //  You may elect to redistribute this code under either of these licenses.
 //  ========================================================================
-package nawaman.callerid.impl;
+package dssb.callerid;
 
-import org.junit.Test;
-
-import nawaman.callerid.impl.CallerId;
-import nawaman.callerid.spec.ITraceCallerSpec;
+import dssb.callerid.ITraceCaller;
 
 @SuppressWarnings("javadoc")
-public class CallerIdTest {
+public class Calling2 {
     
-    private ITraceCallerSpec spec   = new ITraceCallerSpec();
-    private CallerId         tracer = new CallerId();
+    private final ITraceCaller tracer;
     
-    @Test
-    public void testBasicCaller() {
-        spec.testBasicCaller(tracer);
+    public Calling2(ITraceCaller tracer) {
+        this.tracer = tracer;
     }
     
-    @Test
-    public void testBasicCallerWithOffset() {
-        spec.testBasicCallerWithOffset(tracer);
+    public StackTraceElement caller() {
+        return first();
+    }
+    
+    public StackTraceElement first() {
+        return checker();
+    }
+    
+    public StackTraceElement checker() {
+        return tracer.caller(1);
     }
     
 }

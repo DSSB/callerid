@@ -1,5 +1,5 @@
 //  ========================================================================
-//  Copyright (c) 2017 Nawapunth Manusitthipol.
+//  Copyright (c) 2017 Direct Solution Software Builders (DSSB).
 //  ------------------------------------------------------------------------
 //  All rights reserved. This program and the accompanying materials
 //  are made available under the terms of the Eclipse Public License v1.0
@@ -13,25 +13,23 @@
 //
 //  You may elect to redistribute this code under either of these licenses.
 //  ========================================================================
-package nawaman.callerid.spec;
+package dssb.callerid;
 
-import nawaman.callerid.ITraceCaller;
+import static org.junit.Assert.*;
 
+import org.junit.Test;
+
+/**
+ * These tests ensure the default implementation of the ITraceCaller behave as expected.
+ * 
+ * @author NawaMan<nawaman@dssb.io>
+ */
 @SuppressWarnings("javadoc")
-public class Calling1 {
+public class ITraceCallerTest {
     
-    private final ITraceCaller tracer;
-    
-    public Calling1(ITraceCaller tracer) {
-        this.tracer = tracer;
-    }
-    
-    public StackTraceElement caller() {
-        return checker();
-    }
-    
-    public StackTraceElement checker() {
-        return tracer.caller();
+    @Test
+    public void test() {
+        fail("Not yet implemented");
     }
     
 }
