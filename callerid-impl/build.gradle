@@ -1,10 +1,11 @@
-version='1.0.0'
+version='${theVersion}.0'
 
 dependencies {
     compile project(':callerid-api')
     
     compile 'org.projectlombok:lombok:1.16.16'
-
+    compile 'dssb-utils:utils-common:1.0.0'
+    
     //== Test ==
     
     testCompile project(':callerid-spec')

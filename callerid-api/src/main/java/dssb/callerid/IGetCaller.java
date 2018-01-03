@@ -15,31 +15,39 @@
 //  ========================================================================
 package dssb.callerid;
 
-import dssb.failable.Failable;
+import lombok.val;
 
 /**
- * Classes implementing this interface can trace the caller of a method.
+ * Classes implementing this interface can get the caller of a method.
  * 
  * @author NawaMan -- nawaman@dssb.io
  */
-public interface ITraceCaller {
+public interface IGetCaller {
     
     /**
-     * Run the body and continue (or start) the tracing.
+     * Returns the caller of the method that call this method.
      * 
-     * @param   body  the code to run -- the traced element will be passed on as the body parameter.
-     * @return  the value returned by the body.
-     * @throws T  the exception thrown by the value.
+     * @return the caller.
      */
-    public <V, T extends Throwable> V trace(Failable.Function<StackTraceElement, V, T> body) throws T;
+    public default StackTraceElement caller() {
+        return caller(1);   // +1 as it include this one.
+    }
     
     /**
-     * Run the body but pause the tracing.
+     * Returns the caller of the method that call this method with the offset.
      * 
-     * @param   body  the code to run -- the traced element will be passed on as the body parameter.
-     * @return  the value returned by the body.
-     * @throws T  the exception thrown by the value.
+     * @param offset
+     *          the offset of the caller. 0 is no offset, +n is the nth caller before it.
+     *          negative number will be seen as 0.
+     * @return the caller.
      */
-    public <V, T extends Throwable> V tracePause(Failable.Function<StackTraceElement, V, T> body) throws T;
+    public default StackTraceElement caller(int offset) {
+        offset = Math.max(0, offset);
+        
+        val stackTrace = Thread.currentThread().getStackTrace();
+        val length     = stackTrace.length;
+        val index      = Math.min(length - 1, 3) + offset;
+        return stackTrace[index];
+    }
     
 }

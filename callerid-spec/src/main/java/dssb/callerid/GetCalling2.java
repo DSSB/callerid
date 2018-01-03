@@ -15,23 +15,27 @@
 //  ========================================================================
 package dssb.callerid;
 
-import dssb.callerid.ITraceCaller;
+import dssb.callerid.IGetCaller;
 
 @SuppressWarnings("javadoc")
-public class Calling1 {
+public class GetCalling2 {
     
-    private final ITraceCaller tracer;
+    private final IGetCaller tracer;
     
-    public Calling1(ITraceCaller tracer) {
+    public GetCalling2(IGetCaller tracer) {
         this.tracer = tracer;
     }
     
     public StackTraceElement caller() {
+        return first();
+    }
+    
+    public StackTraceElement first() {
         return checker();
     }
     
     public StackTraceElement checker() {
-        return tracer.caller();
+        return tracer.caller(1);
     }
     
 }

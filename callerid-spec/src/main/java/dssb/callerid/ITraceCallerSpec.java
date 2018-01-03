@@ -17,41 +17,26 @@ package dssb.callerid;
 
 import static org.junit.Assert.assertEquals;
 
-import dssb.callerid.ITraceCaller;
 import lombok.val;
 
 /**
  * Specification for any ITraceCaller implementations.
  * 
- * @author manusitn
+ * @author NawaMan -- nawaman@dssb.io
  */
 public class ITraceCallerSpec {
     
     /**
-     * Check the basic caller check.
+     * The caller of the first method that trace is the call of any method-call nested except when trace was pause.
      * 
      * @param tracer  the tracer to use.
      */
-    public void testBasicCaller(ITraceCaller tracer) {
-        val stackTrace = new Calling1(tracer).caller();
-        assertEquals(Calling1.class.getCanonicalName(), stackTrace.getClassName());
-        assertEquals("caller",                          stackTrace.getMethodName());
-        assertEquals("Calling1.java",                   stackTrace.getFileName());
-        assertEquals(30,                                stackTrace.getLineNumber());
+    public void test(ITraceCaller tracer) {
+        val stackTraces = TraceCalling1.outerCaller(tracer).split("\\r?\\n");
+        assertEquals("startTrace   : dssb.callerid.TraceCalling1.outerCaller(TraceCalling1.java:22)", stackTraces[0]);
+        assertEquals("continueTrace: dssb.callerid.TraceCalling1.outerCaller(TraceCalling1.java:22)", stackTraces[1]);
+        assertEquals("pauseTrace   : dssb.callerid.TraceCalling1.outerCaller(TraceCalling1.java:22)", stackTraces[2]);
+        assertEquals("theMethod    : dssb.callerid.TraceCalling1.innerCaller(TraceCalling1.java:44)", stackTraces[3]);
     }
-    
-    /**
-     * Check the basic caller check with offset.
-     * 
-     * @param tracer  the tracer to use.
-     */
-    public void testBasicCallerWithOffset(ITraceCaller tracer) {
-        val stackTrace = new Calling2(tracer).caller();
-        assertEquals(Calling2.class.getCanonicalName(), stackTrace.getClassName());
-        assertEquals("caller",                          stackTrace.getMethodName());
-        assertEquals("Calling2.java",                   stackTrace.getFileName());
-        assertEquals(30,                                stackTrace.getLineNumber());
-    }
-    
     
 }

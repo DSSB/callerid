@@ -25,8 +25,8 @@ import org.junit.Test;
 @SuppressWarnings("javadoc")
 public class ITraceCallerTest {
     
-    private ITraceCallerSpec spec   = new ITraceCallerSpec();
-    private ITraceCaller     tracer = new ITraceCaller() {};
+    private IGetCallerSpec spec   = new IGetCallerSpec();
+    private IGetCaller     tracer = new IGetCaller() {};
     
     @Test
     public void testBasicCaller() {

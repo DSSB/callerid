@@ -17,28 +17,34 @@ package dssb.callerid.impl;
 
 import org.junit.Test;
 
+import dssb.callerid.IGetCallerSpec;
 import dssb.callerid.ITraceCallerSpec;
-import dssb.callerid.impl.CallerId;
 
 /**
  * These tests ensures the implementation of CallerId behave.
  * 
- * @author NawaMan<nawaman@dssb.io>
+ * @author NawaMan -- nawaman@dssb.io
  */
 @SuppressWarnings("javadoc")
 public class CallerIdTest {
     
-    private ITraceCallerSpec spec   = new ITraceCallerSpec();
-    private CallerId         tracer = new CallerId();
+    private IGetCallerSpec   getCallerSpec   = new IGetCallerSpec();
+    private ITraceCallerSpec traceCallerSpec = new ITraceCallerSpec();
+    private CallerId         callerId        = new CallerId();
     
     @Test
-    public void testBasicCaller() {
-        spec.testBasicCaller(tracer);
+    public void testGetCaller() {
+        getCallerSpec.testBasicCaller(callerId);
     }
     
     @Test
-    public void testBasicCallerWithOffset() {
-        spec.testBasicCallerWithOffset(tracer);
+    public void testGetCallerWithOffset() {
+        getCallerSpec.testBasicCallerWithOffset(callerId);
+    }
+    
+    @Test
+    public void testTraceCaller() {
+        traceCallerSpec.test(callerId);
     }
     
 }
