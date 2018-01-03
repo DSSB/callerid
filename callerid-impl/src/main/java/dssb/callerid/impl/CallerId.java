@@ -20,7 +20,7 @@ import dssb.callerid.ITraceCaller;
 /**
  * Implementation to get the caller.
  * 
- * @author NawaMan<nawaman@dssb.io>
+ * @author NawaMan -- nawaman@dssb.io
  */
 public class CallerId implements ITraceCaller {
     

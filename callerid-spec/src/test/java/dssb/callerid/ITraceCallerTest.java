@@ -15,8 +15,6 @@
 //  ========================================================================
 package dssb.callerid;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 /**
@@ -27,9 +25,16 @@ import org.junit.Test;
 @SuppressWarnings("javadoc")
 public class ITraceCallerTest {
     
+    private ITraceCallerSpec spec   = new ITraceCallerSpec();
+    private ITraceCaller     tracer = new ITraceCaller() {};
+    
     @Test
-    public void test() {
-        fail("Not yet implemented");
+    public void testBasicCaller() {
+        spec.testBasicCaller(tracer);
     }
     
+    @Test
+    public void testBasicCallerWithOffset() {
+        spec.testBasicCallerWithOffset(tracer);
+    }
 }

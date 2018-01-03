@@ -20,7 +20,7 @@ import lombok.val;
 /**
  * Classes implementing this interface can trace a caller.
  * 
- * @author NawaMan<nawaman@dssb.io>
+ * @author NawaMan -- nawaman@dssb.io
  */
 public interface ITraceCaller {
     
