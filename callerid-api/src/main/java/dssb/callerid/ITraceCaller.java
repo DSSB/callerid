@@ -30,6 +30,8 @@ public interface ITraceCaller {
      * @param   body  the code to run -- the traced element will be passed on as the body parameter.
      * @return  the value returned by the body.
      * @throws T  the exception thrown by the value.
+     * @param <V> the return value that the body will produce.
+     * @param <T> the exception that the body might throw.
      */
     public <V, T extends Throwable> V trace(Failable.Function<StackTraceElement, V, T> body) throws T;
     
@@ -39,6 +41,8 @@ public interface ITraceCaller {
      * @param   body  the code to run -- the traced element will be passed on as the body parameter.
      * @return  the value returned by the body.
      * @throws T  the exception thrown by the value.
+     * @param <V> the return value that the body will produce.
+     * @param <T> the exception that the body might throw.
      */
     public <V, T extends Throwable> V tracePause(Failable.Function<StackTraceElement, V, T> body) throws T;
     
