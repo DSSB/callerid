@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>callerid-api</name>
-	<comment>Project callerid-api created by Buildship.</comment>
+	<name>dssb-callerid-impl</name>
+	<comment>Project dssb-callerid-impl created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>

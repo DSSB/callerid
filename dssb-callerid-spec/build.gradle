@@ -1,7 +1,7 @@
-version='${theVersion}.0'
+version="${theVersion}.0"
 
 dependencies {
-    compile project(':callerid-api')
+    compile project(':dssb-callerid-api')
     
     compile 'org.projectlombok:lombok:1.16.16'
     compile 'junit:junit:4.12'

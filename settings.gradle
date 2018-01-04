@@ -1,6 +1,6 @@
 
-include ":callerid-api"
-include ":callerid-impl"
-include ":callerid-spec"
+include ":dssb-callerid-api"
+include ":dssb-callerid-impl"
+include ":dssb-callerid-spec"
 
-rootProject.name = theName
+rootProject.name = theGroup
