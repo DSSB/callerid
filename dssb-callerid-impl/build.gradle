@@ -4,6 +4,7 @@ dependencies {
     compile project(':dssb-callerid-api')
     
     compile 'org.projectlombok:lombok:1.16.16'
+    compile 'dssb-failable:dssb-failable-api:1.0.0'
     compile 'dssb-utils:dssb-utils-common:1.0.0'
     
     //== Test ==
