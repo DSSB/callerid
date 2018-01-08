@@ -50,4 +50,24 @@ public interface IGetCaller {
         return stackTrace[index];
     }
     
+    /**
+     * Check if the call is made from within the same package.
+     * 
+     * @return {@code true} if the call is local.
+     **/
+    public default boolean isLocalCall() {
+        try {
+            val stackTrace  = Thread.currentThread().getStackTrace();
+            val clientName  = stackTrace[2].getClassName();
+            val clientClass = Class.forName(clientName);
+            val packageName = clientClass.getPackage().getName();
+            val callerName  = stackTrace[3].getClassName();
+            val isLocalCall = callerName.startsWith(packageName + ".")
+                           && (callerName.indexOf('.', packageName.length() + 1) == -1);
+            return isLocalCall;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
+    
 }

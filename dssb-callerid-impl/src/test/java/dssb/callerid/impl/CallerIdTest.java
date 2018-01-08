@@ -47,4 +47,9 @@ public class CallerIdTest {
         traceCallerSpec.test(callerId);
     }
     
+    @Test
+    public void testLocalCallCheck() {
+        getCallerSpec.testLocalCallCheck(callerId);
+    }
+    
 }

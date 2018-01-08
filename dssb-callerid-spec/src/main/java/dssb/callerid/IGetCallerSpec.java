@@ -16,8 +16,11 @@
 package dssb.callerid;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import dssb.callerid.IGetCaller;
+import dssb.callerid.remote.RemoteCaller;
 import lombok.val;
 
 /**
@@ -51,6 +54,16 @@ public class IGetCallerSpec {
         assertEquals("caller",                          stackTrace.getMethodName());
         assertEquals("GetCalling2.java",                stackTrace.getFileName());
         assertEquals(30,                                stackTrace.getLineNumber());
+    }
+    
+    /**
+     * Test if the given tracer can check if the call is local.
+     * 
+     * @param tracer  the tracer to use.
+     */
+    public void testLocalCallCheck(IGetCaller tracer) {
+        assertTrue(new LocalCaller().callThenCheckIfLocal(tracer));
+        assertFalse(new RemoteCaller().callThenCheckIfLocal(tracer));
     }
     
 }
