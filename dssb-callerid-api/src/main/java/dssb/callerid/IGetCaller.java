@@ -15,6 +15,8 @@
 //  ========================================================================
 package dssb.callerid;
 
+import java.util.Arrays;
+
 import lombok.val;
 
 /**
@@ -68,6 +70,20 @@ public interface IGetCaller {
         } catch (ClassNotFoundException e) {
             return false;
         }
+    }
+    
+    /**
+     * Checks if the current stack is run under a JUnit (JUnit 4 for now).
+     * 
+     * @return {@code true} if this execution is under a JUnit 4 execution.
+     */
+    public default boolean isUnderJUnit() {
+        val stackTraces = Thread.currentThread().getStackTrace();
+        val isInJUnit = Arrays.stream(stackTraces)
+            .map(Object::toString)
+            .map(String::trim)
+            .anyMatch(each->each.startsWith("org.junit.runners.ParentRunner.run(ParentRunner.java:"));
+        return isInJUnit;
     }
     
 }
